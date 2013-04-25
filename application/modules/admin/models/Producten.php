@@ -12,7 +12,8 @@ class Admin_Model_Producten
      */
     public function addProducts($titel, $omschrijving, $prijs) {
 
-        return func_get_args();
+        echo 'test';
+        //return func_get_args();
         //$product = stdClass();
         //return $product;
     }

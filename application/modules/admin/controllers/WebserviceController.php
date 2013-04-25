@@ -14,9 +14,9 @@ class Admin_WebserviceController extends Zend_Controller_Action
 
     public function clientAction()
     {
-        $client = new Zend_Soap_Client('http://192.168.33.95/producten/server?wsdl');
+        $client = new Zend_Soap_Client('http://192.168.33.95/admin/webservice/server?wsdl');
         $client->setSoapVersion(SOAP_1_1); // nromaal is het 1.2 , voor zend 1.2
-        $client->addProducts('titel','omschrijving',15);
+        $client->addProducts('titel45','omschrijving78',15);
     }
 
     public function serverAction()
@@ -34,7 +34,7 @@ class Admin_WebserviceController extends Zend_Controller_Action
             $server->setClass('Application_Model_Producten');
             $server->handle();
         } else {
-            $server = new Zend_Soap_Server('http://192.168.33.95/producten/server?wsdl');
+            $server = new Zend_Soap_Server('http://192.168.33.95/admin/webservice/server?wsdl');
             $server->setClass('Application_Model_Producten');
             $server->setObject(new Application_Model_Producten());
             $server->handle();
