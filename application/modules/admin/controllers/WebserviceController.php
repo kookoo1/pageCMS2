@@ -34,7 +34,7 @@ class Admin_WebserviceController extends Zend_Controller_Action
             $server->setClass('Application_Model_Producten');
             $server->handle();
         } else {
-            $server = new Zend_Soap_Server();
+            $server = new Zend_Soap_Server('http://192.168.33.95/producten/server?wsdl');
             $server->setClass('Application_Model_Producten');
             $server->setObject(new Application_Model_Producten());
             $server->handle();
