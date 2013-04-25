@@ -1,0 +1,16 @@
+#RewriteEngine On
+
+#RewriteCond %{REQUEST_URL} = ""
+#RewriteRule ^.*$ /public/index.php [NC,L]
+
+SetEnv APPLICATION_ENV production
+
+# tss oplossing ipv document root in domain
+RewriteEngine On
+RewriteRule !\.(js|gif|jpg|png|css|txt)$ public/index.php [L]
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ public/$1 [L]
+
+<IFModule mod_php5.c>
+    php_value short_open_tag 1
+</IFModule>
