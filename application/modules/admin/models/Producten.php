@@ -1,12 +1,7 @@
 <?php
 
-
-/**
- * Webservice for SOAP
- * 
- * @author Kris Bras <krise@example.com>
- */
-class Application_Model_Producten {
+class Admin_Model_Producten
+{
 
     /**
      * 
