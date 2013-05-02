@@ -31,12 +31,12 @@ class Admin_WebserviceController extends Zend_Controller_Action
         if (isset($wsdl)) {
 
             $server = new Zend_Soap_AutoDiscover(); // maakt hiermee een perfecte soap wsdl omgeving
-            $server->setClass('Application_Model_Producten');
+            $server->setClass('Admin_Model_Producten');
             $server->handle();
         } else {
             $server = new Zend_Soap_Server('http://192.168.33.95/admin/webservice/server?wsdl');
-            $server->setClass('Application_Model_Producten');
-            $server->setObject(new Application_Model_Producten());
+            $server->setClass('Admin_Model_Producten');
+            $server->setObject(new Admin_Model_Producten());
             $server->handle();
         }
     }

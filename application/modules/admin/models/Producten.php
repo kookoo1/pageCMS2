@@ -1,6 +1,6 @@
 <?php
 
-class Admin_Model_Producten
+class Admin_Model_Producten extends Zend_Db_Table_Abstract
 {
 
     /**
@@ -14,8 +14,8 @@ class Admin_Model_Producten
 
         echo 'test';
         //return func_get_args();
-        //$product = stdClass();
-        //return $product;
+        $product = stdClass();
+        return $product;
     }
 
     /**
